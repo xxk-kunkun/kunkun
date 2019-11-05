@@ -1,0 +1,1435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的京东</title>
+    <link rel="icon" href="jd_pic/jdtitle.png">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            text-decoration: none;
+        }
+
+        #first {
+            margin-bottom: 0;
+            width: 100%;
+            height: 0px;
+            display: block;
+            overflow: hidden;
+        }
+
+        .clear {
+            position: absolute;
+            width: 22px;
+            height: 20px;
+            right: 80px;
+            top: 8px;
+            opacity: 0.3;
+            background-color: #555555;
+            color: white;
+            border-style: none;
+            cursor: pointer;
+        }
+
+        .header li {
+
+            float: left;
+        }
+
+        .header {
+            background: url("jd_pic/back.png");
+            background-repeat: repeat-x;
+            width: 100%;
+            height: 170px;
+        }
+
+        .header1 {
+            width: 990px;
+            height: 170px;
+            margin: 0 auto;
+
+        }
+
+        .header_left {
+            float: left;
+
+        }
+
+        .header_right {
+
+            float: right;
+
+            width: 800px;
+            height: 170px;
+
+        }
+
+        .hright1 {
+            width: 100%;
+            height: 30px;
+        }
+
+
+        .hright1_left {
+
+            float: left;
+            width: 45px;
+            height: 30px;
+            margin-left: 5px;
+
+        }
+
+        .hright1_left:hover {
+            background: #ffffff;
+        }
+
+        .city {
+            position: relative;
+            font-size: 12px;
+            color: #646464;
+            line-height: 30px;
+
+        }
+
+
+        .city:hover .city_hover {
+
+            display: block;
+            z-index: 999;
+
+        }
+
+        .city_hover {
+
+            display: none;
+            position: absolute;
+            width: 320px;
+            height: 200px;
+            background: #FFF;
+            z-index: 999;
+            padding-top: 20px;
+            top: 30px;
+            left: 0;
+
+        }
+
+        .city_hover a {
+            font-size: 12px;
+            font-family: Arial;
+            color: #999395;
+        }
+
+        .city_hover a:hover {
+
+            color: #C81623;
+            background: lightyellow;
+        }
+
+        .city_hover li {
+            line-height: 25px;
+            float: none;
+        }
+
+        .city_hover ul {
+
+            float: left;
+            margin: 0px 15px 10px;
+        }
+
+
+        .hright1_right {
+            float: right;
+            height: 30px;
+            width: 750px;
+            padding: 0;
+
+        }
+
+        .hright1_right a {
+            font-size: 12px;
+            font-family: Arial;
+            color: #999395;
+            padding-left: 5px;
+
+        }
+
+        .hright1_right a:hover {
+            color: #C81623;
+        }
+
+        .hright1_right li {
+            height: 30px;
+            line-height: 30px;
+            margin-left: 5px;
+        }
+
+        .shu {
+            width: 5px;
+            height: 30px;
+            margin-right: 8px;
+        }
+
+        hr {
+
+            clear: both;
+            border: 1px solid darkgray;
+        }
+
+        #wdjd {
+            position: relative;
+
+        }
+
+        .wdjd {
+            display: none;
+            position: absolute;
+            width: 250px;
+            height: 150px;
+            top: 30px;
+            left: 0px;
+            background: #fff;
+            box-shadow: darkgray 10px 10px 30px 5px;
+        }
+
+        .wdjd li {
+            clear: both;
+            line-height: 25px;
+            height: 25px;
+        }
+
+        .wdjd ul {
+            float: left;
+            margin: 0 50px 10px 0;
+
+        }
+
+
+        #wdjd:hover .wdjd {
+
+            display: block;
+            z-index: 999;
+        }
+
+        #wdjd:hover {
+            background: white;
+        }
+
+        #khfw:hover {
+            background: white;
+        }
+
+        #wzdh:hover {
+            background: white;
+        }
+
+        #wzdh {
+            position: relative;
+        }
+
+        .wzdh {
+
+            display: none;
+            position: absolute;
+            top: 30px;
+            right: -80px;
+            border: 1px darkgray solid;
+            height: 250px;
+            width: 960px;
+            background: url("jd_pic/wzdh.png");
+            background-position: -10px 0;
+        }
+
+        #wzdh:hover .wzdh {
+            display: block;
+            z-index: 999;
+        }
+
+        #khfw {
+            position: relative;
+        }
+
+        .khfw {
+            display: none;
+            position: absolute;
+            width: 200px;
+            height: 250px;
+            top: 30px;
+            right: 0;
+            background: white;
+            box-shadow: darkgray 0px 0px 10px 5px;
+        }
+
+        .khfw li {
+            clear: both;
+            line-height: 25px;
+            height: 25px;
+        }
+
+        .khfw ul {
+
+            float: left;
+            margin: 0 30px 10px 0;
+        }
+
+
+        #khfw:hover .khfw {
+            display: block;
+            z-index: 999;
+
+        }
+
+
+        .hright2 {
+            width: 790px;
+            height: 90px;
+            position: relative;
+        }
+
+        .hright2_medi {
+            margin: 0 auto;
+
+        }
+
+        .hright2_medi_top {
+
+            height: 60px;
+            widteh: 700px;
+
+
+        }
+
+
+        .camera {
+
+            background: url("jd_pic/zh1.png");
+            position: absolute;
+            top: 30px;
+            left: 395px;
+            cursor: pointer;
+            width: 21px;
+            height: 18px;
+
+        }
+
+        .gwc {
+
+            float: right;
+            margin-left: 20px;
+            margin-right: 82px;
+            margin-top: 22px;
+            position: relative;
+
+        }
+
+        .gwc_tu {
+
+            position: absolute;
+            top: 35px;
+            right: 0;
+            display: none;
+            z-index: 10;
+
+        }
+
+        .gwc:hover .gwc_tu {
+            display: block;
+
+        }
+
+
+        .hright2_medi_bottom {
+
+            height: 30px;
+
+        }
+
+        .hright2_medi_bottom li {
+
+            margin-left: 15px;
+
+        }
+
+        .hright2_medi_bottom a {
+
+            font-size: 10px;
+            color: #646464;
+
+        }
+
+        .hright2_medi_bottom a:hover {
+
+            color: #c81623;
+            cursor: pointer;
+
+        }
+
+
+        .hright2_twoDC {
+
+            position: absolute;
+            right: 0;
+
+        }
+
+        .erweima_dispear {
+
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: none;
+            z-index: 100;
+
+        }
+
+        .hright2_twoDC:hover .erweima_dispear {
+            display: block;
+        }
+
+
+        .hright3 {
+            width: 790px;
+            height: 50px;
+
+        }
+
+        .hright3 a {
+
+            font-size: 16px;
+            font-weight: bold;
+            color: #0a0a0a;
+        }
+
+        .hright3 a:hover {
+
+            color: #c81623;
+            cursor: pointer;
+
+        }
+
+
+        .hright3 li {
+
+            margin-left: 30px;
+            line-height: 50px;
+
+        }
+
+        .body {
+            padding-top: 6px;
+            width: 990px;
+            height: 480px;
+            margin: 0 auto;
+        }
+
+        .body_left {
+
+            width: 190px;
+            height: 480px;
+            float: left;
+            background: white;
+            box-shadow: darkgray 10px 10px 50px 5px;
+        }
+
+        .body_left li {
+
+            font-size: 14px;
+            font-family: Arial;
+            line-height: 30px;
+            padding-left: 10px;
+            margin-bottom: 10px;
+
+        }
+
+        .body_left li:hover {
+            background: #999395;
+
+        }
+
+        .body_left a:hover {
+
+            cursor: pointer;
+            color: #C81623;
+
+        }
+
+        .jydq {
+
+            position: relative;
+        }
+
+        .jydq_Main {
+
+            position: absolute;
+            width: 810px;
+            height: 480px;
+            display: none;
+            z-index: 999;
+            background: white;
+            left: 190px;
+            top: -15px;
+            border: solid 1px white;
+            box-shadow: darkgray 10px 10px 40px 5px;
+
+
+        }
+
+        .jydq:hover .jydq_Main {
+
+            display: block;
+        }
+
+        .jydq_main {
+
+            margin-top: 12px;
+            margin-left: 26px;
+            width: 770px;
+            height: 460px;
+
+
+        }
+
+        .jydq_left {
+
+            width: 600px;
+            height: 460px;
+            float: left;
+
+        }
+
+        .jydq_right {
+
+            width: 170px;
+            height: 460px;
+            float: right;
+
+        }
+
+        .jydq_nav {
+
+            float: left;
+            margin-left: 30px;
+            background: #333333;
+            color: #fff;
+            font-size: 12px;
+            font-family: Arial;
+            height: 24px;
+            line-height: 24px;
+
+        }
+
+        .jydq_nav:hover {
+            background: #C81623;
+
+        }
+
+
+        .jydq_nav a:hover {
+            color: white
+        }
+
+        .jydq_nav_list {
+            margin-top: 40px;
+            font-size: 12px;
+        }
+
+        .shangpin {
+
+            margin-right: 20px;
+            color: #60575A;
+        }
+
+        .primary {
+
+            font-size: 13px;
+            color: black;
+            font-weight: bold;
+            margin-right: 20px;
+        }
+
+
+        .jydq_right a {
+            margin-top: -2px;
+        }
+
+        .digital {
+            position: relative;
+        }
+
+        .digital_Main {
+
+            position: absolute;
+            width: 810px;
+            height: 480px;
+            display: none;
+            z-index: 999;
+            background: white;
+            left: 190px;
+            top: -55px;
+            box-shadow: darkgray 10px 10px 30px 5px;
+        }
+
+        .digital:hover .digital_Main {
+            display: block;
+        }
+
+        .digital_main {
+
+            margin-top: 12px;
+            margin-left: 26px;
+            width: 770px;
+            height: 460px;
+        }
+
+        .digital_left {
+
+            width: 600px;
+            height: 460px;
+            float: left;
+
+        }
+
+        .digital_right {
+
+            width: 170px;
+            height: 460px;
+            float: right;
+
+        }
+
+        .computer {
+            position: relative;
+        }
+
+        .computer_Main {
+
+            position: absolute;
+            width: 810px;
+            height: 480px;
+            display: none;
+            z-index: 999;
+            background: white;
+            left: 190px;
+            top: -95px;
+            box-shadow: darkgray 10px 10px 20px 5px;
+
+        }
+
+        .computer:hover .computer_Main {
+            display: block;
+        }
+
+        .computer_main {
+
+            margin-top: 12px;
+            margin-left: 26px;
+            width: 770px;
+            height: 460px;
+        }
+
+        .computer_left {
+
+            width: 600px;
+            height: 460px;
+            float: left;
+
+        }
+
+        .computer_right {
+
+            width: 170px;
+            height: 460px;
+            float: right;
+
+        }
+
+
+        .body_right {
+
+            width: 780px;
+            height: 480px;
+            float: right;
+
+        }
+
+        .body_right_1 {
+            float: left;
+            width: 590px;
+            height: 480px;
+        }
+
+        .turn_pic {
+
+            width: 590px;
+            height: 340px;
+            position: relative;
+
+        }
+
+        #list {
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+        }
+
+        .item {
+
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            opacity: 0;
+            transition: all 0.5s;
+        }
+
+        .active {
+            z-index: 10;
+            opacity: 1;
+        }
+
+        .item img {
+            width: 590px;
+            height: 340px;
+        }
+
+        .btn {
+
+            width: 40px;
+            height: 60px;
+            position: absolute;
+            opacity: 0.5;
+            cursor: pointer;
+
+        }
+
+        #gobutton {
+            right: 0;
+            top: 130px;
+            z-index: 100;
+        }
+
+        #prebutton {
+            left: 0;
+            top: 130px;
+            z-index: 100;
+        }
+
+        .point_list {
+
+            position: absolute;
+            right: 12px;
+            bottom: 20px;
+            z-index: 100;
+
+        }
+
+        .point {
+
+            width: 16px;
+            height: 16px;
+            border-radius: 100%;
+            float: left;
+            margin-right: 10px;
+            background-color: rgba(0, 0, 0, 0.4);
+            cursor: pointer;
+            border: 2px solid;
+            border-color: rgba(255, 255, 255, 0.6);
+
+        }
+
+        .point_active {
+            background-color: white;
+        }
+
+        .body_right_2 {
+
+            height: 192px;
+            height: 480px;
+            float: right;
+        }
+    </style>
+
+
+</head>
+<body style="background:#F6F6F6; ">
+
+<div id="first">
+    <img src="jd_pic/jdheader.png" style="width: 100%; ">
+    <button type="button" class="clear">×</button>
+
+</div>
+
+<div class="header">
+
+    <div class="header1">
+
+        <div class="header_left"><img style="width: 190px; height: 170px;" src="jd_pic/JD.png"></div>
+
+        <div class="header_right">
+
+            <div class="hright1">
+                <div class="hright1_left">
+                    <div class="city" onmouseover="jd_over()" onmouseout="jd_out()">
+                        <li style=" width:50px; font-size: 10px;height: 30px"><img src="jd_pic/1.png"
+                                                                                   style="width:20px; height: 30px;"
+                                                                                   id="jd_img"/>
+                            <span style="height: 30px; width: 24px;  float: right; padding-right: 6px">北京</span>
+                        </li>
+                        <div class="city_hover">
+                            <ul>
+                                <li><img src="jd_pic/北京.png"></li>
+                                <li><a href="#">山西</a></li>
+                                <li><a href="#">内蒙古</a></li>
+                                <li><a href="#">福建</a></li>
+                                <li><a href="#">江西</a></li>
+                                <li><a href="#">西藏</a></li>
+                                <li><a href="#">新疆</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">上海</a></li>
+                                <li><a href="#">河南</a></li>
+                                <li><a href="#">江苏</a></li>
+                                <li><a href="#">湖北</a></li>
+                                <li><a href="#">四川</a></li>
+                                <li><a href="#">陕西</a></li>
+                                <li><a href="#">港澳</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">天津</a></li>
+                                <li><a href="#">辽宁</a></li>
+                                <li><a href="#">山东</a></li>
+                                <li><a href="#">湖南</a></li>
+                                <li><a href="#">海南</a></li>
+                                <li><a href="#">甘肃</a></li>
+                                <li><a href="#">台湾</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">重庆</a></li>
+                                <li><a href="#">吉林</a></li>
+                                <li><a href="#">安徽</a></li>
+                                <li><a href="#">广东</a></li>
+                                <li><a href="#">贵州</a></li>
+                                <li><a href="#">青海</a></li>
+                                <li><a href="#">钓鱼岛</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="#">河北</a></li>
+                                <li><a href="#">黑龙江</a></li>
+                                <li><a href="#">浙江</a></li>
+                                <li><a href="#">广西</a></li>
+                                <li><a href="#">云南</a></li>
+                                <li><a href="#">宁夏</a></li>
+                                <li><a href="#">海外</a></li>
+                            </ul>
+
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="hright1_right">
+                    <ul>
+                        <li><a href="#">你好，请登录</a></li>
+                        <li class="enroll"><a href="#" style="color: #FF0000;">免费注册</a></li>
+                        <li class="shu"></li>
+                        <li><a href="#">我的订单</a></li>
+                        <li class="shu"><img src="jd_pic/shu.png"></li>
+                        <li id="wdjd" onmouseover="over()" onmouseout="out()">
+                            <a href="#" style="float:left;" id="wdjd_title">我的京东</a>
+                            <img src="jd_pic/v1.png" style="float:left;" id="wdjd_img">
+                            <!-- 我的京东-->
+                            <div class="wdjd">
+                                <ul>
+                                    <li><a href="#">待处理订单</a></li>
+                                    <li><a href="#">返修退换货</a></li>
+                                    <li><a href="#">降价商品</a></li>
+
+                                </ul>
+                                <ul>
+                                    <li><a href="#">消息</a></li>
+                                    <li><a href="#">我的问答</a></li>
+                                    <li><a href="#">我的关注</a></li>
+                                </ul>
+                                <hr/>
+                                <ul>
+                                    <li><a href="#">我的京东</a></li>
+                                    <li><a href="#">我的白条</a></li>
+                                </ul>
+                                <ul style="margin-left: 10px">
+                                    <li><a href="#">我的优惠券</a></li>
+                                    <li><a href="#">我的理财</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="shu"><img src="jd_pic/shu.png"></li>
+                        <li><a href="#">京东会员</a></li>
+                        <li class="shu"><img src="jd_pic/shu.png"></li>
+                        <li><a href="#">企业采购</a></li>
+                        <li class="shu"><img src="jd_pic/shu.png"></li>
+                        <li id="khfw" onmouseover="over_khfw()" onmouseout="out_khfw()">
+                            <a href="#" style="float:left;">客户服务</a>
+                            <img src="jd_pic/v1.png" id="khfw_img" style="float:left;"/>
+                            <!--客户服务-->
+                            <div class="khfw">
+                                <ul>
+                                    <li style="font-weight:bold; color:#666666; font-size: 14px">客户</li>
+                                    <li><a href="#">帮助中心</a></li>
+                                    <li><a href="#">在线客服</a></li>
+                                    <li><a href="#">电话服务</a></li>
+                                    <li><a href="#">金融咨询</a></li>
+                                </ul>
+                                <ul style="margin-right:0;">
+                                    <li style="visibility:hidden"><a href="#">客户</a></li>
+                                    <li><a href="#">帮助中心</a></li>
+                                    <li><a href="#">在线客服</a></li>
+                                    <li><a href="#">电话服务</a></li>
+                                    <li><a href="#">金融咨询</a></li>
+                                </ul>
+                                <hr/>
+                                <ul>
+                                    <li style="font-weight:bold; color:#666666; font-size: 14px">商户</li>
+                                    <li><a href="#">合作招商</a></li>
+                                    <li><a href="#">商家后台</a></li>
+                                    <li><a href="#">商家帮助</a></li>
+
+                                </ul>
+                                <ul style="margin-right:0;">
+                                    <li style="visibility:hidden"><a href="#">客户</a></li>
+                                    <li><a href="#">京东商学院</a></li>
+                                    <li><a href="#">京麦工作台</a></li>
+                                    <li><a href="#">规则平台</a></li>
+
+                                </ul>
+                            </div>
+
+                        </li>
+                        <li id="wzdh" onmouseover="over_wzdh()" onmouseout="out_wzdh()">
+                            <a href="#" style="float:left;">网站导航</a>
+                            <img src="jd_pic/v1.png" style="float:left;" id="wzdh_img"/>
+                            <div class="wzdh">
+                                <!--                                                                <img src="jd_pic/wzdh1.png">-->
+                            </div>
+
+                        </li>
+                        <li class="shu"><img src="jd_pic/shu.png"></li>
+                        <li><a href="#">手机京东</a></li>
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="hright2">
+
+                <div class="hright2_twoDC">
+                    <img src="jd_pic/erweima.png">
+
+                    <div class="erweima_dispear"><img src="jd_pic/er2.png"></div>
+
+                </div>
+
+                <div class="hright2_medi">
+
+                    <div class="hright2_medi_top">
+
+                        <div class="gwc"><img src="jd_pic/gwc.png">
+                            <div class="gwc_tu"><img src="jd_pic/gwc1.png"></div>
+
+                        </div>
+
+
+                        <div>
+                            <div><img style="margin-left: 80px; margin-top: 22px;" src="jd_pic/sou3.png">
+                                <input type="text"
+                                       style=" position: absolute;left: 84px;top: 23px;width: 300px;height: 31px; font-size: 12px; color: #646464; border-style: none; outline: none"
+                                       value="天猫双11必买..."
+                                       onfocus="this.value=''" onblur="this.value='天猫双11必买...'">
+
+                            </div>
+                            <div class="camera" onmouseover="ca_over()" onmouseout="ca_out()">
+                                <img src="jd_pic/zh1.png" id="camera">
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="hright2_medi_bottom">
+
+                        <li style="margin-left: 80px"><a href="#">凉席89</a></li>
+                        <li><a href="#">Surface</a></li>
+                        <li><a href="#">营养土9.9元</a></li>
+                        <li><a href="#">天梭免息</a></li>
+                        <li><a href="#">空调7折</a></li>
+                        <li><a href="#">取暖器</a></li>
+                        <li><a href="#">踝靴</a></li>
+                        <li><a href="#">启赋有机</a></li>
+                        <li><a href="#">皮裤女</a></li>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+
+            <div class="hright3">
+
+                <li><a>秒杀</a></li>
+                <li><a>优惠卷</a></li>
+                <li><a>闪购</a></li>
+                <li><a>拍卖</a></li>
+                <li>|</li>
+                <li><a>服装城</a></li>
+                <li><a>京东商城</a></li>
+                <li><a>生鲜</a></li>
+                <li><a>全球购</a></li>
+                <li>|</li>
+                <li><a>京东金融</a></li>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<div class="body">
+
+
+    <div class="body_left">
+
+
+        <ul style="padding-top: 15px;">
+            <li class="jydq"><a>家用电器</a>
+
+                <div class="jydq_Main">
+
+                    <div class="jydq_main">
+
+                        <div class="jydq_left">
+                            <div style="height: 18px;width: 100%; margin-bottom: 20px;">
+
+                                <div class="jydq_nav" style="margin-left: 0px;"><a>&nbsp;&nbsp;家电管 &nbsp;&nbsp;> &nbsp;&nbsp; </a>
+                                </div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;家电专卖 &nbsp;&nbsp; >&nbsp;&nbsp; </a></div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;家电服务 &nbsp;&nbsp; > &nbsp;&nbsp; </a></div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;企业专卖 &nbsp;&nbsp; >&nbsp;&nbsp; </a></div>
+
+                            </div>
+                            <div>
+
+
+                                <div class="jydq_nav_list"><a class="primary" href="#">电视 &nbsp;></a><a
+                                        href="#" class="shangpin">超薄电视</a><a href="#" class="shangpin">全面屏电视</a><a
+                                        href="#" class="shangpin">led电视</a><a
+                                        href="#" class="shangpin">智能电视</a><a href="#" class="shangpin">4k超清电视</a><a
+                                        href="#" class="shangpin">曲面屏电视</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">空调 &nbsp;></a><a
+                                        href="#" class="shangpin">智能空调</a><a href="#" class="shangpin">节能空调</a><a
+                                        href="#" class="shangpin">强劲空调</a><a
+                                        href="#" class="shangpin">空调挂机</a><a href="#" class="shangpin">空调柜机</a><a
+                                        href="#" class="shangpin">中央空调</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">洗衣机 &nbsp;></a><a href="#"
+                                                                                                         class="shangpin">一筒</a><a
+                                        href="#" class="shangpin">两筒</a><a href="#" class="shangpin">滚轮</a><a
+                                        href="#" class="shangpin">节能洗衣机</a><a href="#" class="shangpin">家用洗衣机</a><a
+                                        href="#" class="shangpin">一体式洗衣机</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">冰箱 &nbsp;></a><a
+                                        href="#" class="shangpin">多门</a><a href="#" class="shangpin">对开门</a><a href="#"
+                                                                                                               class="shangpin">三门</a><a
+                                        href="#" class="shangpin">两门</a><a href="#" class="shangpin">箱式</a><a href="#"
+                                                                                                              class="shangpin">
+                                    配件</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">厨房大件 &nbsp;</a><a
+                                        href="#" class="shangpin">抽油烟机</a><a href="#" class="shangpin">洗碗机</a><a
+                                        href="#" class="shangpin">节能灶台</a><a
+                                        href="#" class="shangpin">集成灶</a><a href="#" class="shangpin">消毒机</a><a
+                                        href="#"></a></div>
+                            </div>
+
+                        </div>
+                        <div class="jydq_right">
+
+                            <div class="kongtiao" style="width: 170px; height: 156px">
+                                <div style="height: 39px"><a><img src="jd_pic/jd1.png"></a>
+                                    <a><img src="jd_pic/jd2.png"></a></div>
+                                <div style="height: 39px"><a><img src="jd_pic/jd3.png"></a>
+                                    <a><img src="jd_pic/jd4.png"></a></div>
+                                <div style="height: 39px"><a><img src="jd_pic/jd5.png"></a>
+                                    <a><img src="jd_pic/jd6.png"></a></div>
+                                <a><img src="jd_pic/jd9.png"></a>
+                                <a><img src="jd_pic/jd10.png"></a>
+
+                            </div>
+                            <div class="kongtiao_bottom">
+                                <div><a><img src="jd_pic/jd7.png"></a></div>
+                                <div><a><img src="jd_pic/jd8.png"></a></div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+            <li class="digital"><a>手机</a>/<a>运营商</a>/<a>数码</a>
+
+                <div class="digital_Main">
+
+                    <div class="digital_main">
+
+                        <div class="digital_left">
+
+                            <div style="height: 18px;width: 100%; margin-bottom: 20px;">
+
+                                <div class="jydq_nav" style="margin-left: 0px;"><a>&nbsp;&nbsp;玩3c &nbsp;&nbsp;> &nbsp;&nbsp; </a>
+                                </div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;手机频道 &nbsp;&nbsp; >&nbsp;&nbsp; </a></div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;网上营业厅 &nbsp;&nbsp; > &nbsp;&nbsp; </a></div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;配件频道 &nbsp;&nbsp; >&nbsp;&nbsp; </a></div>
+
+                            </div>
+                            <div>
+
+
+                                <div class="jydq_nav_list"><a class="primary" href="#">手机 &nbsp;></a><a
+                                        href="#" class="shangpin">手机通讯</a><a href="#" class="shangpin">智能级</a><a
+                                        href="#" class="shangpin">老人机</a><a
+                                        href="#" class="shangpin">小米</a><a href="#" class="shangpin">华为</a><a href="#"
+                                                                                                              class="shangpin">中兴</a>
+                                </div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">运营商 &nbsp;></a><a
+                                        href="#" class="shangpin">移动</a><a href="#" class="shangpin">联通</a><a href="#"
+                                                                                                              class="shangpin">电信</a><a
+                                        href="#" class="shangpin">其他</a><a href="#" class="shangpin">合约机</a><a href="#"
+                                                                                                               class="shangpin">手机卡</a>
+                                </div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">手机配件 &nbsp;></a><a
+                                        href="#" class="shangpin">手机卡</a><a
+                                        href="#" class="shangpin">存储卡</a><a href="#" class="shangpin">手机膜</a><a
+                                        href="#" class="shangpin">手机壳</a><a href="#" class="shangpin">宽带</a><a href="#"
+                                                                                                               class="shangpin">办套餐</a>
+                                </div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">电脑 &nbsp;></a><a
+                                        href="#" class="shangpin">电脑整机</a><a href="#" class="shangpin">电脑配件</a><a
+                                        href="#" class="shangpin">电脑cpu</a><a
+                                        href="#" class="shangpin">电脑主机</a><a href="#" class="shangpin">鼠标</a><a href="#"
+                                                                                                                class="shangpin">
+                                    音响</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">网络产品 &nbsp;</a><a
+                                        href="#" class="shangpin">路由器</a><a href="#" class="shangpin">机顶盒</a><a href="#"
+                                                                                                                class="shangpin">网络适配器</a><a
+                                        href="#" class="shangpin">网卡</a><a href="#" class="shangpin">网线</a><a
+                                        href="#"></a></div>
+                            </div>
+
+
+                        </div>
+                        <div class="digital_right">
+
+                            <div><img src="jd_pic/shouji.png"></div>
+                            <div><img src="jd_pic/digital.png"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </li>
+            <li class="computer"><a>电脑</a>/<a>办公</a>
+
+
+                <div class="computer_Main">
+
+                    <div class="computer_main">
+
+                        <div class="computer_left">
+                            <div style="height: 18px;width: 100%; margin-bottom: 20px;">
+
+                                <div class="jydq_nav" style="margin-left: 0px;"><a>&nbsp;&nbsp;玩3c &nbsp;&nbsp;> &nbsp;&nbsp; </a>
+                                </div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;本周热卖 &nbsp;&nbsp; >&nbsp;&nbsp; </a></div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;手机采购 &nbsp;&nbsp; > &nbsp;&nbsp; </a></div>
+                                <div class="jydq_nav"><a>&nbsp;&nbsp;Game+ &nbsp;&nbsp; >&nbsp;&nbsp; </a></div>
+
+                            </div>
+                            <div>
+
+
+                                <div class="jydq_nav_list"><a class="primary" href="#">电脑 &nbsp;></a><a
+                                        href="#" class="shangpin">华硕</a><a href="#" class="shangpin">联想</a><a href="#"
+                                                                                                              class="shangpin">小米</a><a
+                                        href="#" class="shangpin">苹果</a><a href="#" class="shangpin">戴尔</a><a href="#"
+                                                                                                              class="shangpin">战神</a>
+                                </div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">外设配件 &nbsp;></a><a
+                                        href="#" class="shangpin">鼠标</a><a href="#" class="shangpin">机械键盘</a><a href="#"
+                                                                                                                class="shangpin">游戏耳机</a><a
+                                        href="#" class="shangpin">游戏音响</a><a href="#" class="shangpin">电脑主机</a><a
+                                        href="#" class="shangpin">电脑包</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">电脑配件 &nbsp;></a><a href="#"
+                                                                                                          class="shangpin">主板</a><a
+                                        href="#" class="shangpin">显卡</a><a href="#" class="shangpin">散热器</a><a
+                                        href="#" class="shangpin">cpu</a><a href="#" class="shangpin">硬盘</a><a href="#"
+                                                                                                               class="shangpin">电源</a>
+                                </div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">摄影摄像 &nbsp;></a><a
+                                        href="#" class="shangpin">多门</a><a href="#" class="shangpin">数码相机</a><a href="#"
+                                                                                                                class="shangpin">三门</a><a
+                                        href="#" class="shangpin">两门</a><a href="#" class="shangpin">杆式</a><a href="#"
+                                                                                                              class="shangpin">
+                                    配件</a></div>
+                                <div class="jydq_nav_list"><a class="primary" href="#">智能设备 &nbsp;</a><a
+                                        href="#" class="shangpin"> 智能手环</a><a href="#" class="shangpin">智能手表</a><a
+                                        href="#" class="shangpin">智能机器人</a><a
+                                        href="#" class="shangpin">天猫精灵</a><a href="#" class="shangpin">小爱同学</a><a
+                                        href="#"></a></div>
+                            </div>
+
+                        </div>
+                        <div class="computer_right">
+
+                            <div><img src="jd_pic/cpu.png"></div>
+                            <div><img src="jd_pic/diannao.png"></div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </li>
+            <li><a>家居</a>/<a>家具</a>/<a>家</a></li>
+            <li><a>男装</a>/<a>女装</a></li>
+
+        </ul>
+
+    </div>
+    <div class="body_right">
+
+        <div class="body_right_1">
+
+            <div class="turn_pic" onmouseover="listover()" onmouseout="listout()">
+                <ul id="list" >
+                    <li class="item active"><img src="jd_pic/tupa%20(1).png"></li>
+                    <li class="item"><img src="jd_pic/tupa(2).png"></li>
+                    <li class="item"><img src="jd_pic/tupa(3).png"></li>
+                    <li class="item"><img src="jd_pic/tupa(4).png"></li>
+                    <li class="item"><img src="jd_pic/tupa(5).png"></li>
+                    <li class="item"><img src="jd_pic/tupa(6).png"></li>
+                    <li class="item"><img src="jd_pic/tupa(7).png"></li>
+                </ul>
+                <button type="button" class="btn" id="gobutton">></button>
+                <button type="button" class="btn" id="prebutton"><</button>
+
+                <ul class="point_list">
+                    <li class="point point_active" datatype="0"></li>
+                    <li class="point" datatype="1"></li>
+                    <li class="point" datatype="2"></li>
+                    <li class="point" datatype="3"></li>
+                    <li class="point" datatype="4"></li>
+                    <li class="point" datatype="5"></li>
+                    <li class="point" datatype="6"></li>
+
+                </ul>
+            </div>
+
+            <div style="margin-top: 10px">
+
+                <div style="float: left"><a><img style="width: 290px;height: 130px;" src="jd_pic/tuo1(1).png"></a></div>
+                <div style="float: left;margin-left: 10px"><a><img style="width: 290px; height: 130px"
+                                                                   src="jd_pic/tuo1(2).png"></a></div>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="body_right_2">
+            <img src="jd_pic/xir.png">
+        </div>
+
+    </div>
+</div>
+
+</body>
+
+<script>
+    var items = document.getElementsByClassName('item');
+    var pre = document.getElementById('prebutton');
+    var go = document.getElementById("gobutton");
+    var points = document.getElementsByClassName('point');
+    var division = document.getElementsByClassName('list');
+
+
+    var index = 0;
+
+    var clearactive = function () {
+        for (var i = 0; i < items.length; i++) {
+            items[i].className = 'item';
+        }
+        for (var j = 0; j < points.length; j++) {
+            points[j].className = 'point';
+        }
+    }
+
+    var goindex = function () {
+        clearactive();
+        items[index].className = 'item active';
+        points[index].className = 'point point_active';
+
+    }
+
+
+    var gonext = function () {
+
+        if (index == 6)
+            index = 0;
+        else
+            index++;
+        goindex();
+    }
+
+
+    var gopre = function () {
+        if (index == 0)
+            index = 6;
+        else
+            index--;
+        goindex();
+    }
+    go.addEventListener('click', function () {
+        gonext();
+    });
+    pre.addEventListener('click', function () {
+        gopre();
+    });
+    for (let i = 0; i < points.length; i++) {
+        points[i].addEventListener('click', function () {
+
+            var pointindex = this.getAttribute('datatype');
+            index = pointindex;
+            goindex();
+        })
+    }
+
+
+    var t = setInterval(gonext, 1600);
+
+    function listover() {
+
+        clearInterval(t);
+    }
+
+    function listout() {
+        t = setInterval(gonext, 1600);
+    }
+</script>
+<script>
+    var h = 0;
+    var tm;
+    var type = 1;
+    var head = document.getElementById('first');
+    var c = document.querySelector('.clear')
+
+    function add() {
+        if (h <= 82)
+            head.style.height = h++ + "px";
+    }
+
+    function sup() {
+        if (h != 0)
+            head.style.height = h-- + "px";
+    }
+
+    tm = setInterval(add, 8);
+
+
+    function choose() {
+
+        clearInterval(tm);
+
+        if (type == 0) {
+            type = 1
+            tm = setInterval(add, 8);
+        }
+        else if (type == 1) {
+            type = 0;
+            tm = setInterval(sup, 8);
+        }
+
+    }
+
+    c.addEventListener('click', choose);
+
+</script>
+<script>
+
+    function over() {
+        var img = document.getElementById('wdjd_img');
+        img.src = "jd_pic/v2.png"
+    }
+
+    function over_wzdh() {
+        var img = document.getElementById('wzdh_img');
+        img.src = "jd_pic/v2.png"
+    }
+
+    function over_khfw() {
+        var img = document.getElementById('khfw_img');
+        img.src = "jd_pic/v2.png"
+    }
+
+    function out() {
+        var img1 = document.getElementById('wdjd_img');
+        img1.src = "jd_pic/v1.png"
+    }
+
+    function out_wzdh() {
+        var img1 = document.getElementById('wzdh_img');
+        img1.src = "jd_pic/v1.png"
+    }
+
+    function out_khfw() {
+        var img1 = document.getElementById('khfw_img');
+        img1.src = "jd_pic/v1.png"
+    }
+
+    function jd_out() {
+        var img = document.getElementById('jd_img');
+        img.src = "jd_pic/1.png";
+    }
+
+    function jd_over() {
+        var img = document.getElementById('jd_img');
+        img.src = "jd_pic/2.png";
+    }
+
+    function ca_over() {
+        var img = document.getElementById('camera')
+        img.src = "jd_pic/zh2.png"
+    }
+
+    function ca_out() {
+        var img = document.getElementById('camera')
+        img.src = "jd_pic/zh1.png"
+    }
+
+</script>
+</html>
